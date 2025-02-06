@@ -16,9 +16,9 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 
@@ -26,7 +26,8 @@ public class pdf_view extends AppCompatActivity {
 
     Button view_pdf;
     EditText roll_n;
-
+    FirebaseStorage storage;
+    StorageReference storageReference;
     String i;
     Spinner sp;
     String roll;
@@ -38,6 +39,9 @@ public class pdf_view extends AppCompatActivity {
         view_pdf=findViewById(R.id.view_report);
         roll_n=findViewById(R.id.view_roll);
         sp=findViewById(R.id.subjects);
+
+        storage = FirebaseStorage.getInstance();
+        storageReference = storage.getReference();
 
         ArrayList<String> ar = new ArrayList<>();
         ar.add("Choose the Subject");
@@ -82,21 +86,15 @@ public class pdf_view extends AppCompatActivity {
         });}
 
     private void retrievePDFFromDatabase(String roll) {
-        DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference();
-        String childPath = "Students/"+roll+"/files/"+i ; // Replace with your desired child path
+        StorageReference sref = storageReference.child("Reports").child("files").child(roll+"_"+i+".pdf");
 
-        databaseRef.child(childPath).get().addOnSuccessListener(new OnSuccessListener<DataSnapshot>() {
-            @Override
-            public void onSuccess(DataSnapshot dataSnapshot) {
-                String downloadUrl = dataSnapshot.getValue(String.class);
-                if (downloadUrl != null && !downloadUrl.isEmpty()) {
-                    openPDF(downloadUrl);
-                } else {
-                    // Handle the case where the download URL is not available
-                    Toast.makeText(pdf_view.this, "Report not found", Toast.LENGTH_SHORT).show();
-                }
-            }
-        }).addOnFailureListener(new OnFailureListener() {
+        sref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        openPDF(uri.toString());
+                    }
+                })
+        .addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
                 // Handle the failure case

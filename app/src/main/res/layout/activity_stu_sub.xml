@@ -5,18 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="10dp"
+    android:background="#548F4373"
     tools:context=".stu_sub">
 
 
     <TextView
-        android:id="@+id/tv"
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="99dp"
         android:fontFamily="serif-monospace"
-        android:text="Paperless Lab Report"
+        android:text="Lab Report Submission"
         android:gravity="center"
         android:textStyle="bold"
-        android:textSize="15dp"/>
+        android:textSize="25dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,18 +28,30 @@
         android:orientation="vertical">
 
 
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="cursive"
+            android:layout_marginBottom="50dp"
+            android:gravity="center"
+            android:text="Manage Report"
+            android:textSize="25dp"
+            android:textStyle="bold" />
         <Button
             android:id="@+id/button12"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Upload Report"
+            android:text="Upload_Report"
+            style="@style/Widget.Material3.Button.IconButton.Outlined"
             android:onClick="upload_report"/>
 
         <Button
             android:id="@+id/button13"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Delete Report"
+            android:text="Delete_Report"
+            style="@style/Widget.Material3.Button.IconButton.Outlined"
             android:onClick="delete_report"/>
     </LinearLayout>
 

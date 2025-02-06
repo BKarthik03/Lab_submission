@@ -5,28 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="10dp"
+    android:background="#548F4373"
     tools:context=".update_staff">
     <TextView
-        android:id="@+id/upup"
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="99dp"
         android:fontFamily="serif-monospace"
-        android:text="Paperless Lab Report"
-        android:background="@color/white"
+        android:text="Lab Report Submission"
         android:gravity="center"
         android:textStyle="bold"
-        android:textSize="15dp"/>
+        android:textSize="25dp"/>
 
-    <TextView
-        android:id="@+id/update"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Update Staff Details"
-        android:gravity="center"
-        android:textSize="25dp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:fontFamily="casual"/>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -34,6 +26,16 @@
         android:orientation="vertical"
         android:layout_margin="25dp"
         android:gravity="center">
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="cursive"
+            android:layout_marginBottom="50dp"
+            android:gravity="center"
+            android:text="Update Staff"
+            android:textSize="25dp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/up_name_st"
@@ -41,6 +43,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
+            style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox"
             android:hint="Name" />
 
         <EditText
@@ -49,6 +52,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
+            style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox"
             android:hint="Subject" />
 
         <EditText
@@ -56,6 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox"
             android:hint="Login No."
             android:inputType="number" />
 
@@ -65,6 +70,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Numeric Password"
+            style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox"
             android:inputType="numberPassword" />
 
         <Button
@@ -72,6 +78,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="UPDATE"
+            style="@style/Widget.Material3.Button.IconButton.Outlined"
             android:onClick="update_stf"/>
     </LinearLayout>
 

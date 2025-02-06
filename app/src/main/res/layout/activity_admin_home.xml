@@ -4,20 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#548F4373"
+    android:padding="10dp"
     android:orientation="vertical"
     tools:context=".Admin_Home">
 
 
 
     <TextView
-        android:id="@+id/tv"
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="99dp"
         android:fontFamily="serif-monospace"
-        android:text="Paperless Lab Report"
+        android:text="Lab Report Submission"
         android:gravity="center"
         android:textStyle="bold"
-        android:textSize="15dp"/>
+        android:textSize="25dp"/>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,17 +28,31 @@
         android:orientation="vertical"
         android:padding="10dp"
         android:gravity="center">
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="cursive"
+            android:layout_marginBottom="50dp"
+            android:gravity="center"
+            android:text="Admin Portal"
+            android:textSize="25dp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/acc_stu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/Widget.Material3.Button.IconButton.Outlined"
+
             android:text="Access_Student" />
 
         <Button
             android:id="@+id/acc_sta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/Widget.Material3.Button.IconButton.Outlined"
+
             android:text="Access_Staff" />
     </LinearLayout>
 

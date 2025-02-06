@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
+    android:background="#548F4373"
     android:orientation="vertical"
     tools:context=".MainActivity" >
 
@@ -13,45 +14,59 @@
         android:layout_width="match_parent"
         android:layout_height="99dp"
         android:fontFamily="serif-monospace"
-        android:text="Paperless Lab Report"
+
+        android:text="Lab Report Submission"
         android:gravity="center"
         android:textStyle="bold"
-        android:textSize="15dp"/>
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="ADMIN"
-        android:onClick="admin_page"/>
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Student Login"
-        android:onClick="stu_login"/>
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Staff Login"
-        android:onClick="stf_login"/>
+        android:textSize="25dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="bottom"
-        >
+        android:padding="15dp"
+        android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/imageView"
+        <Button
+            android:id="@+id/button5"
+            style="@style/Widget.Material3.Button.IconButton.Outlined"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="50dp"
-            app:srcCompat="@drawable/nature" /></LinearLayout>
+            android:onClick="admin_page"
+            android:text="ADMIN" />
+
+        <Button
+            android:id="@+id/button"
+            style="@style/Widget.Material3.Button.IconButton.Outlined"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="stu_login"
+            android:text="Student Login" />
+
+        <Button
+            android:id="@+id/button2"
+            style="@style/Widget.Material3.Button.IconButton.Outlined"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="stf_login"
+            android:text="Staff Login" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="bottom">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="257dp"
+                android:layout_gravity="center"
+                android:layout_height="237dp"
+                android:layout_marginBottom="50dp"
+                app:srcCompat="@drawable/nature" />
+        </LinearLayout>
+    </LinearLayout>
+
+
 
 
 

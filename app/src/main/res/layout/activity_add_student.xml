@@ -5,28 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="10dp"
+    android:background="#548F4373"
     tools:context=".add_student">
     <TextView
-        android:id="@+id/tv10"
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="99dp"
         android:fontFamily="serif-monospace"
-        android:text="Paperless Lab Report"
-        android:background="@color/white"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:textSize="15dp"/>
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Add Student"
+        android:text="Lab Report Submission"
         android:gravity="center"
-        android:textSize="25dp"
-        android:textColor="@color/black"
         android:textStyle="bold"
-        android:fontFamily="casual"/>
+        android:textSize="25dp"/>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -34,6 +26,16 @@
         android:orientation="vertical"
         android:layout_margin="25dp"
         android:gravity="center">
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="cursive"
+            android:layout_marginBottom="50dp"
+            android:gravity="center"
+            android:text="Add Student"
+            android:textSize="25dp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/editTextText2"
@@ -41,6 +43,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
+            style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox"
             android:hint="Name" />
 
         <EditText
@@ -49,6 +52,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Roll No."
+            style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox"
             android:inputType="number" />
 
         <EditText
@@ -56,6 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            style="@style/Widget.Material3.AutoCompleteTextView.OutlinedBox"
             android:hint="Numeric Password"
             android:inputType="numberPassword" />
 
@@ -63,6 +68,7 @@
             android:id="@+id/button9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/Widget.Material3.Button.IconButton.Outlined"
             android:text="ADD" />
     </LinearLayout>
 

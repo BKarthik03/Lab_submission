@@ -4,7 +4,7 @@
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
 
-        <item name="android:statusBarColor">#CDB5FA</item>
+        <item name="android:statusBarColor">@color/white</item>
         <item name="android:windowLightStatusBar">true</item>
     </style>
 </resources>
