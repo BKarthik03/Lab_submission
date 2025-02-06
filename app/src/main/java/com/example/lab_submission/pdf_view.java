@@ -18,6 +18,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageException;
 import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
@@ -97,9 +98,21 @@ public class pdf_view extends AppCompatActivity {
         .addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                // Handle the failure case
-                Toast.makeText(pdf_view.this, "Failed to retrieve Report from database", Toast.LENGTH_SHORT).show();
+                if (e instanceof StorageException) {
+                    StorageException storageException = (StorageException) e;
+                    if (storageException.getErrorCode() == StorageException.ERROR_OBJECT_NOT_FOUND) {
+                        // File not found
+                        Toast.makeText(pdf_view.this, "No report found", Toast.LENGTH_SHORT).show();
+                    } else {
+                        // Handle other errors
+                        Toast.makeText(pdf_view.this, "Failed to retrieve report: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    // Handle non-storage related errors
+                    Toast.makeText(pdf_view.this, "Failed to retrieve report: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
             }
+
         });
     }
 
