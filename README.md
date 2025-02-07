@@ -31,9 +31,6 @@ This Android application aims to digitalize the process of lab report submission
 4. Confirm submission.
 5. Delete the Submission if required or to update with a new one.
 
-## Admin Credentials
 
-Username: sampleuser@gmail.com <br/>
-Password: 12345678
 
 
