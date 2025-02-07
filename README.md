@@ -31,6 +31,15 @@ This Android application aims to digitalize the process of lab report submission
 4. Confirm submission.
 5. Delete the Submission if required or to update with a new one.
 
+## 📝 Feedback & Bug Reports  
+Found a bug? Have a feature request?  
+Please [Open an Issue](https://github.com/BKarthik03/Lab_submission/issues) and describe the problem or suggestion.  
 
+### 🔹 How to Report an Issue?  
+1. Go to the [Issues](https://github.com/BKarthik03/Lab_submission/issues) tab.  
+2. Click **New Issue**.  
+3. Choose a title and describe the problem or suggestion.  
+4. Click **Submit new issue**.  
 
+Your feedback helps us improve! 🚀  
 
